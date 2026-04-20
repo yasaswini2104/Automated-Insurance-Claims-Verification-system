@@ -34,5 +34,6 @@ public class Notification {
     @Enumerated(EnumType.STRING)
     private NotificationStatus status;
 
+    
     private LocalDateTime createdAt;
 }
