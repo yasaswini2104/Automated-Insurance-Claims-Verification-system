@@ -1,5 +1,10 @@
 package com.project.insurance.enums;
 
-public class UserRole {
-    
+public enum UserRole {
+    ADMIN,
+    POLICYHOLDER,
+    CLAIMANT,
+    CLAIMS_ADJUSTER,
+    FRAUD_ANALYST,
+    MANAGER
 }
