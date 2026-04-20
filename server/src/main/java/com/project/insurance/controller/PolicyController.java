@@ -20,7 +20,7 @@ public class PolicyController {
 
     private final PolicyService policyService;
 
-    // CREATE
+    // create
     @PostMapping
     public ResponseEntity<PolicyResponseDTO> createPolicy(
             @Valid @RequestBody PolicyRequestDTO dto) {
@@ -28,7 +28,7 @@ public class PolicyController {
         return ResponseEntity.ok(policyService.createPolicy(dto));
     }
 
-    // UPDATE
+    // update
     @PutMapping("/{id}")
     public ResponseEntity<PolicyResponseDTO> updatePolicy(
             @PathVariable Long id,
@@ -37,7 +37,7 @@ public class PolicyController {
         return ResponseEntity.ok(policyService.updatePolicy(id, dto));
     }
 
-    // STATUS UPDATE
+    // status update
     @PatchMapping("/{id}/status")
     public ResponseEntity<PolicyResponseDTO> updateStatus(
             @PathVariable Long id,
@@ -46,14 +46,14 @@ public class PolicyController {
         return ResponseEntity.ok(policyService.updatePolicyStatus(id, status));
     }
 
-    // GET
+    // get by id
     @GetMapping("/{id}")
     public ResponseEntity<PolicyResponseDTO> getPolicy(@PathVariable Long id) {
 
         return ResponseEntity.ok(policyService.getPolicyById(id));
     }
 
-    // GET BY USER
+    // get by user
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<PolicyResponseDTO>> getPoliciesByUser(
             @PathVariable Long userId) {
@@ -61,7 +61,7 @@ public class PolicyController {
         return ResponseEntity.ok(policyService.getPoliciesByUser(userId));
     }
 
-    // FILTER
+    // filter by status
     @GetMapping("/status")
     public ResponseEntity<List<PolicyResponseDTO>> getByStatus(
             @RequestParam String status) {
